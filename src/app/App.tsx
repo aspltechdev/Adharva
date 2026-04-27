@@ -190,7 +190,7 @@ export default function App() {
             <a href="#contact" className="text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
           </div>
 
-          <a href="#contact" className="bg-blue-900 text-white px-6 py-2.5 rounded-lg hover:bg-blue-800 transition-colors">
+          <a href="#contact-form" className="bg-blue-900 text-white px-6 py-2.5 rounded-lg hover:bg-blue-800 transition-colors">
             Book Free Session
           </a>
         </div>
@@ -220,7 +220,7 @@ export default function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#cta" className="bg-blue-900 text-white px-8 py-4 rounded-xl hover:bg-blue-800 transition-all flex items-center justify-center gap-2 group">
+                <a href="#contact-form" className="bg-blue-900 text-white px-8 py-4 rounded-xl hover:bg-blue-800 transition-all flex items-center justify-center gap-2 group">
                   <span className="font-semibold">Book Free Consultation</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -327,7 +327,7 @@ export default function App() {
                 ))}
               </div>
 
-              <a href="#cta" className="inline-flex items-center gap-2 bg-blue-900 text-white px-8 py-4 rounded-xl hover:bg-blue-800 transition-all group">
+              <a href="#contact-form" className="inline-flex items-center gap-2 bg-blue-900 text-white px-8 py-4 rounded-xl hover:bg-blue-800 transition-all group">
                 <span className="font-semibold">Book a Session</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -654,7 +654,7 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:adharvacca@gmail.com" className="bg-yellow-400 text-gray-900 px-10 py-5 rounded-xl hover:bg-yellow-300 transition-all font-bold text-lg">
+              <a href="#contact-form" className="bg-yellow-400 text-gray-900 px-10 py-5 rounded-xl hover:bg-yellow-300 transition-all font-bold text-lg">
                 Book Free Consultation
               </a>
               <a href="https://wa.me/919182321749" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-xl hover:bg-white/20 transition-all font-bold text-lg flex items-center justify-center gap-2">
