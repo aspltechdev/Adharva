@@ -826,7 +826,7 @@ export default function App() {
                 <div>
                   <div className="text-sm font-semibold text-gray-600 mb-1">Hours</div>
                   <p className="text-gray-900 font-medium">
-                    Mon-Sat: 7AM - 10PM, Sun: 7AM - 10PM
+                    Mon-Sat: 9 AM - 6 PM, Sun: 10 AM - 2 PM
                   </p>
                 </div>
               </div>
@@ -1001,6 +1001,9 @@ export default function App() {
                   <Globe className="w-4 h-4" />
                   <span>adharvaedumilestones.com</span>
                 </a>
+                <div className="flex items-start gap-2 text-gray-400 mt-2 text-sm italic">
+                  <span>Mon-Sat: 9 AM - 6 PM<br />Sun: 10 AM - 2 PM</span>
+                </div>
               </div>
             </div>
           </div>
