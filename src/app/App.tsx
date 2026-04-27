@@ -952,10 +952,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg flex items-center justify-center" aria-hidden="true">
-                  <Target className="w-6 h-6 text-white" />
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={imgLogo}
+                  alt="Adharva Career Consultancy Logo"
+                  className="w-12 h-12 object-contain"
+                />
                 <div>
                   <div className="font-bold text-lg">Adharva Career Consultancy</div>
                   <div className="text-sm text-gray-400">Bangalore, Karnataka</div>
