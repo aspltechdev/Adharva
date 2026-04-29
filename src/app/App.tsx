@@ -111,17 +111,32 @@ export default function App() {
       { property: 'og:title', content: 'Adharva Career Consultancy | Best Career Counselling in Bangalore' },
       { property: 'og:description', content: 'Expert career counselling and guidance for students in Bangalore. IIT certified career counsellor.' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://www.adharvaedumilestones.com' }
+      { property: 'og:url', content: 'https://adharvacounseling.com/' },
+      { property: 'og:image', content: 'https://adharvacounseling.com/logo.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: 'Adharva Career Consultancy Logo' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:url', content: 'https://adharvacounseling.com/' },
+      { name: 'twitter:title', content: 'Adharva Career Consultancy' },
+      { name: 'twitter:description', content: 'Professional career counselling for students in Bangalore.' },
+      { name: 'twitter:image', content: 'https://adharvacounseling.com/logo.png' }
     ];
 
     ogTags.forEach(tag => {
-      let ogTag = document.querySelector(`meta[property="${tag.property}"]`);
-      if (!ogTag) {
-        ogTag = document.createElement('meta');
-        ogTag.setAttribute('property', tag.property);
-        document.head.appendChild(ogTag);
+      const isNameAttr = tag.name !== undefined;
+      const selector = isNameAttr ? `meta[name="${tag.name}"]` : `meta[property="${tag.property}"]`;
+      let metaTag = document.querySelector(selector);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        if (isNameAttr) {
+          metaTag.setAttribute('name', tag.name);
+        } else {
+          metaTag.setAttribute('property', tag.property);
+        }
+        document.head.appendChild(metaTag);
       }
-      ogTag.setAttribute('content', tag.content);
+      metaTag.setAttribute('content', tag.content);
     });
 
     // Add structured data (JSON-LD) for local business
@@ -136,7 +151,7 @@ export default function App() {
       "@type": "ProfessionalService",
       "name": "Adharva Career Consultancy",
       "description": "Expert career counselling and guidance for students in Bangalore",
-      "url": "https://www.adharvaedumilestones.com",
+      "url": "https://adharvacounseling.com/",
       "telephone": "+91-9182321749",
       "email": "adharvacca@gmail.com",
       "address": {
