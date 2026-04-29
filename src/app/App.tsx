@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import {
   Award,
   Users,
@@ -84,105 +85,71 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    // Update page title and meta tags for SEO
-    document.title = "Adharva Career Consultancy | Best Career Counselling in Bangalore for Students";
-
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'Expert career counselling and guidance for students in Bangalore. IIT certified career counsellor offering personalized career planning after 10th/12th. Best career coaching for students and parents in India.');
-
-    // Add keywords meta tag
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', 'career counselling for students, career guidance for students in India, career counselling in Bangalore, student career guidance, best career counsellor in Bangalore, career planning for students, career guidance after 10th, career guidance after 12th, career counselling for parents, career coaching for students');
-
-    // Add Open Graph tags for social sharing
-    const ogTags = [
-      { property: 'og:title', content: 'Adharva Career Consultancy | Best Career Counselling in Bangalore' },
-      { property: 'og:description', content: 'Expert career counselling and guidance for students in Bangalore. IIT certified career counsellor.' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://adharvacounseling.com/' },
-      { property: 'og:image', content: 'https://adharvacounseling.com/logo.png' },
-      { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: 'Adharva Career Consultancy Logo' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:url', content: 'https://adharvacounseling.com/' },
-      { name: 'twitter:title', content: 'Adharva Career Consultancy' },
-      { name: 'twitter:description', content: 'Professional career counselling for students in Bangalore.' },
-      { name: 'twitter:image', content: 'https://adharvacounseling.com/logo.png' }
-    ];
-
-    ogTags.forEach(tag => {
-      const isNameAttr = tag.name !== undefined;
-      const selector = isNameAttr ? `meta[name="${tag.name}"]` : `meta[property="${tag.property}"]`;
-      let metaTag = document.querySelector(selector);
-      if (!metaTag) {
-        metaTag = document.createElement('meta');
-        if (isNameAttr) {
-          metaTag.setAttribute('name', tag.name);
-        } else {
-          metaTag.setAttribute('property', tag.property);
-        }
-        document.head.appendChild(metaTag);
-      }
-      metaTag.setAttribute('content', tag.content);
-    });
-
-    // Add structured data (JSON-LD) for local business
-    let structuredData = document.querySelector('script[type="application/ld+json"]');
-    if (!structuredData) {
-      structuredData = document.createElement('script');
-      structuredData.setAttribute('type', 'application/ld+json');
-      document.head.appendChild(structuredData);
-    }
-    structuredData.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Adharva Career Consultancy",
-      "description": "Expert career counselling and guidance for students in Bangalore",
-      "url": "https://adharvacounseling.com/",
-      "telephone": "+91-9182321749",
-      "email": "adharvacca@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bangalore",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "priceRange": "$$",
-      "areaServed": {
-        "@type": "Country",
-        "name": "India"
-      },
-      "serviceType": [
-        "Career Counselling for Students",
-        "Career Guidance after 10th",
-        "Career Guidance after 12th",
-        "Career Planning for Students",
-        "Career Coaching for Students",
-        "Career Counselling for Parents"
-      ],
-      "founder": {
-        "@type": "Person",
-        "name": "Mounika Sarma K",
-        "jobTitle": "IIT Certified Career Counsellor"
-      }
-    });
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        {/* Basic SEO */}
+        <title>Adharva Career Consultancy | Best Career Counselling in Bangalore</title>
+        <meta name="description" content="Expert career counselling and guidance for students in Bangalore. IIT certified career counsellor offering personalized career planning after 10th/12th. Best career coaching for students and parents in India." />
+        <meta name="keywords" content="career counselling for students, career guidance for students in India, career counselling in Bangalore, student career guidance, best career counsellor in Bangalore, career planning for students, career guidance after 10th, career guidance after 12th, career counselling for parents, career coaching for students" />
+        <link rel="canonical" href="https://adharvacounseling.com/" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Open Graph (Facebook/LinkedIn/General) */}
+        <meta property="og:title" content="Adharva Career Consultancy | Best Career Counselling in Bangalore" />
+        <meta property="og:description" content="Expert career counselling and guidance for students in Bangalore. IIT certified career counsellor." />
+        <meta property="og:image" content="https://adharvacounseling.com/logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Adharva Career Consultancy Logo" />
+        <meta property="og:url" content="https://adharvacounseling.com/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Adharva Career Consultancy" />
+        <meta name="twitter:description" content="Professional career counselling for students in Bangalore." />
+        <meta name="twitter:image" content="https://adharvacounseling.com/logo.png" />
+
+        {/* Structured Data (JSON-LD) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Adharva Career Consultancy",
+            "description": "Expert career counselling and guidance for students in Bangalore",
+            "url": "https://adharvacounseling.com/",
+            "telephone": "+91-9182321749",
+            "email": "adharvacca@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "addressCountry": "IN"
+            },
+            "priceRange": "$$",
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "serviceType": [
+              "Career Counselling for Students",
+              "Career Guidance after 10th",
+              "Career Guidance after 12th",
+              "Career Planning for Students",
+              "Career Coaching for Students",
+              "Career Counselling for Parents"
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Mounika Sarma K",
+              "jobTitle": "IIT Certified Career Counsellor"
+            }
+          })}
+        </script>
+      </Helmet>
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
