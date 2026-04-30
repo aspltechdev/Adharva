@@ -67,7 +67,7 @@ export default function App() {
       setIsSubmitted(true);
       e.target.reset();
       
-      const response = await fetch("https://formspree.io/f/adharvacca@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/adharvacca@gmail.com", {
         method: "POST",
         body: formData,
         headers: {
@@ -76,7 +76,7 @@ export default function App() {
       });
       
       if (!response.ok) {
-        console.warn("Formspree setup needed: Please check adharvacca@gmail.com for an activation email from Formspree to start receiving real emails.");
+        console.warn("FormSubmit setup needed: Please check adharvacca@gmail.com for an activation email from FormSubmit.co to activate the form.");
       }
     } catch (error) {
       console.error("Submission error:", error);
